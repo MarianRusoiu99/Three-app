@@ -1,0 +1,128 @@
+:root{
+    --bgColor : hsla(242, 86%, 6%, 1);
+    --bgColorLight : hsla(242, 86%, 24%, 1);
+    --textColor : hsla(242, 86%, 88%, 1);
+    --textColorDark : hsla(242, 36%, 0%, 1);
+    --paperColor: hsla(242, 86%, 44%, 1);
+    --paperColorDark: hsla(242, 86%, 34%, 1);
+    --shadowColorFaint: hsla(0, 0%, 0%, 0.2);
+  }
+  
+  ::selected{
+    color: var(--textColorDark);
+  }
+  
+#active{
+
+}
+
+
+  html, body{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    /* background: var(--bgColor);
+    background: linear-gradient(135deg, var(--bgColor), var(--bgColorLight)); */
+    color: var(--textColor);
+    font-family: 'Saira', sans-serif;
+    position: relative;
+  }
+  
+  *{
+    box-sizing: border-box;
+    transition: all 0.12s cubic-bezier(0.42, 0.54, 0.22, 1.26);
+  }
+  
+
+  #out {
+    
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    /* z-index: -10; */
+  }
+  
+  audio {
+    position: fixed;
+    left: 10px;
+    bottom: -10px;
+    width: calc(100% - 20px);
+  }
+  
+  audio.active{
+    bottom: 10px;
+  }
+  
+  #thefile{
+    width: 0.1px;
+      height: 0.1px;
+      opacity: 0;
+      overflow: hidden;
+      position: absolute;
+      z-index: 1;
+  }
+  
+  label.file{
+    display: inline-block;
+    position: absolute;
+  
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    
+    background: var(--paperColor);
+    color: var(--textColor);
+    font-size: 1.25em;
+    font-weight: 700;
+    box-shadow: 0 20px 60px var(--shadowColorFaint);
+  
+    cursor: pointer;
+  }
+#preloader{
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background-color:black;
+  z-index: 1000000;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+  
+  
+  
+  
+  /* label.file.normal{
+    transform: translate3d(10%, 50%, 0);
+    padding: 0.2rem 2rem;
+    font-size: 1rem;
+    top: 0;
+    left: 0;
+  } */
+  #duration{
+    position: absolute;
+    left: 50%;
+  }
+  #play{
+    display:none;
+    position: absolute;
+    top:85vh;
+    left: 50vw;
+    z-index:1000;
+  }
+  #stop{
+    display:none;
+    position: absolute;
+    top:85vh;
+    left: 50vw;
+    z-index:1000;
+  }
+  .active{
+    display:inline-block !important;
+  }
+  #audio-player-container{
+    position: absolute;
+    top:50%;
+  }
