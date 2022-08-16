@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Audio Visualizer based on Three.js</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Saira" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="./style/main.css"> -->
+    <!-- <link rel="stylesheet" href="./style/main.css"> -->
+</head>
+<body>
+<div id="content">
+    
+    <!-- <div id = "preloader"><img alt = "preloader" src = "./assets/giphy.gif"></div> -->
+    <div id="out">
+        <label for="thefile" class="file"> Choose an audio file
+            <input type="file" id="thefile" accept="audio/*" />
+          </label>
+      
+          <audio id="audio" controls></audio>
+          <p id = "play" class="ac">Play</p>
+          <p id="stop" >Stop</p>
+    </div>
+  </div>
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three/build/three.module.js",
+        "OrbitControls": "https://unpkg.com/three/examples/jsm/controls/OrbitControls",
+        "SimplexNoise": "https://cdnjs.cloudflare.com/ajax/libs/simplex-noise/2.3.0/simplex-noise.min.js"
+      }
+    }
+  </script>
+  <script async src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>
+<!-- <script defer src='https://cdnjs.cloudflare.com/ajax/libs/three.js/84/three.min.js'></script>  -->
+
+<!-- <script async src='https://unpkg.com/three/examples/jsm/controls/OrbitControls'></script> -->
+<script async src='https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.6.3/dat.gui.min.js'></script>
+<script type ="module" async src='https://unpkg.com/browse/simplex-noise@4.0.0/dist/cjs/simplex-noise.js'></script> 
+ <!-- <script type = "module"  src="./index.js"></script> -->
+<script type = "javascript" src = "./controls.js"></script>
+</body>
+</html>
