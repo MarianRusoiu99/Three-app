@@ -1,21 +1,13 @@
 :root{
-    --bgColor : hsla(242, 86%, 6%, 1);
-    --bgColorLight : hsla(242, 86%, 24%, 1);
-    --textColor : hsla(242, 86%, 88%, 1);
-    --textColorDark : hsla(242, 36%, 0%, 1);
-    --paperColor: hsla(242, 86%, 44%, 1);
-    --paperColorDark: hsla(242, 86%, 34%, 1);
-    --shadowColorFaint: hsla(0, 0%, 0%, 0.2);
+    --bgColor :#171717;
+    --bgColorLight : #EDEDED;
+    --textColor :#EDEDED ;
+    --textColorLight:#171717 ;
+    --secondary1:#444444 ;
+    --secondary2:#DA0037;
+   
   }
   
-  ::selected{
-    color: var(--textColorDark);
-  }
-  
-#active{
-
-}
-
 
   html, body{
     margin: 0;
@@ -23,8 +15,7 @@
     overflow: hidden;
     height: 100vh;
     width: 100vw;
-    /* background: var(--bgColor);
-    background: linear-gradient(135deg, var(--bgColor), var(--bgColorLight)); */
+    background: var(--bgColor);
     color: var(--textColor);
     font-family: 'Saira', sans-serif;
     position: relative;
@@ -45,46 +36,12 @@
     /* z-index: -10; */
   }
   
-  audio {
-    position: fixed;
-    left: 10px;
-    bottom: -10px;
-    width: calc(100% - 20px);
-  }
-  
-  audio.active{
-    bottom: 10px;
-  }
-  
-  #thefile{
-    width: 0.1px;
-      height: 0.1px;
-      opacity: 0;
-      overflow: hidden;
-      position: absolute;
-      z-index: 1;
-  }
-  
-  label.file{
-    display: inline-block;
-    position: absolute;
-  
-    padding: 1rem 2rem;
-    border-radius: 4px;
-    
-    background: var(--paperColor);
-    color: var(--textColor);
-    font-size: 1.25em;
-    font-weight: 700;
-    box-shadow: 0 20px 60px var(--shadowColorFaint);
-  
-    cursor: pointer;
-  }
+
 #preloader{
   position: absolute;
   width: 100%;
   height: 100vh;
-  background-color:black;
+  background-color:var(--bgColor);
   z-index: 1000000;
   display:flex;
   justify-content: center;
@@ -92,37 +49,115 @@
 }
   
   
+/*   
   
   
-  /* label.file.normal{
-    transform: translate3d(10%, 50%, 0);
-    padding: 0.2rem 2rem;
-    font-size: 1rem;
-    top: 0;
-    left: 0;
-  } */
   #duration{
     position: absolute;
     left: 50%;
   }
-  #play{
+  #play, #stop{
+    transition:  1s linear;
     display:none;
-    position: absolute;
+    padding: 10px;
+    background-color: #DA0037;
     top:85vh;
     left: 50vw;
-    z-index:1000;
+    
+    color:var(--textColor);
   }
-  #stop{
-    display:none;
-    position: absolute;
-    top:85vh;
-    left: 50vw;
-    z-index:1000;
+  #mute-icon{
+    display: none;
+    margin: auto;
+    padding: 10px;
+    background-color: #DA0037;
   }
   .active{
     display:inline-block !important;
   }
   #audio-player-container{
+    display:none;
     position: absolute;
     top:50%;
   }
+  #seek-slider{
+    -webkit-appearance: none;  
+  appearance: none;
+  width: 500px; 
+  height: 5px;
+  border-radius: 5px;
+  background: #d3d3d3; 
+  color: #DA0037;
+  outline: none;
+  opacity: 0.7; 
+  -webkit-transition: .2s; 
+  transition: opacity .2s;
+  border: none;
+  }
+  #seek-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;  
+    appearance: none;
+    outline: none; 
+    background-color:white !important;
+      
+    cursor: pointer;
+    width: 10px;
+
+  } */
+
+  /* audio::-webkit-media-controls-panel
+audio::-webkit-media-controls-mute-button
+audio::-webkit-media-controls-play-button
+audio::-webkit-media-controls-timeline-container
+audio::-webkit-media-controls-current-time-display
+audio::-webkit-media-controls-time-remaining-display
+audio::-webkit-media-controls-timeline
+audio::-webkit-media-controls-volume-slider-container
+audio::-webkit-media-controls-volume-slider
+audio::-webkit-media-controls-seek-back-button
+audio::-webkit-media-controls-seek-forward-button
+audio::-webkit-media-controls-fullscreen-button
+audio::-webkit-media-controls-rewind-button
+audio::-webkit-media-controls-return-to-realtime-button
+audio::-webkit-media-controls-toggle-closed-captions-button */
+#audio-player-container{
+  display:none;
+  position: absolute;
+  top:50%;
+}
+#thefile{
+  width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: 1;
+}
+
+label.file{
+  display: inline-block;
+  position: absolute;
+  padding: 1rem 2rem;
+  border-radius: 4px;
+
+  background: var(--secondary1);
+  color: var(--textColor);
+  font-size: 1.25em;
+  font-weight: 700;
+  cursor: pointer;
+}
+audio{
+  display: flex;
+  position: relative;
+  top: 90%;
+  left:0;
+  width: 90%;
+  margin: auto;
+  opacity: 0.5;
+}
+audio:hover {
+  opacity: 1;
+}
+audio::-webkit-media-controls-panel{
+  background-color: var(--bgColorLight);
+}
