@@ -25,6 +25,7 @@ var vizInit = function () {
     muteIconContainer.classList.add("active")
     fileLabel.classList.add('normal');
     audio.classList.add('active');
+    document.getElementById('but').style.display = "none"
     var files = this.files;
     whilePlaying()
     btnPlay.classList.remove("active")

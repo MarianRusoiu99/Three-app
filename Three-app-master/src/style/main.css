@@ -17,7 +17,7 @@
     width: 100vw;
     background: var(--bgColor);
     color: var(--textColor);
-    font-family: 'Saira', sans-serif;
+    font-family: 'Roboto', sans-serif;
     position: relative;
   }
   
@@ -139,9 +139,11 @@ label.file{
   position: absolute;
   padding: 1rem 2rem;
   border-radius: 4px;
-
-  background: var(--secondary1);
-  color: var(--textColor);
+  top:50%;
+  left:50%;
+  transform: translate(-50%,0);
+  background: var(--textColor);
+  color:#171717;
   font-size: 1.25em;
   font-weight: 700;
   cursor: pointer;
@@ -153,11 +155,16 @@ audio{
   left:0;
   width: 90%;
   margin: auto;
-  opacity: 0.5;
+  opacity: 0.1;
 }
 audio:hover {
   opacity: 1;
 }
 audio::-webkit-media-controls-panel{
+  border-radius: 0;
   background-color: var(--bgColorLight);
+}
+audio::-webkit-media-controls-timeline-container{
+  background-color: #171717;
+  
 }
